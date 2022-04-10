@@ -32,7 +32,7 @@ const lua = {
 const files = {js, c, cs, python, lua} //Hopefully last error fix? This better work >:(
 
 for (dir in files) {
-  templates.innerHTML = templates.innerHTML + "\n<div class='" + dir.toString()+"' id='" + dir.toString() + "'>" + dir.toString()
+  document.getElementById("templates").innerHTML = templates.innerHTML + "\n<div class='" + dir.toString()+"' id='" + dir.toString() + "'>" + dir.toString()
   for (fl in dir) {
     let curr = document.getElementById(dir.toString())
     let reader = new FileReader();
@@ -41,7 +41,7 @@ for (dir in files) {
 	    		document.querySelector("#file-contents").textContent = text;
 		});
 		let res = reader.readAsText("./" + dir.toString() + fl);
-    curr.innerHTML = curr.innerHTML + "\n" + res
+    document.getElementById(dir.toString()).innerHTML = document.getElementById(dir.toString()).innerHTML + "\n" + res
   }
 }
   </script>
