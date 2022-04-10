@@ -28,7 +28,7 @@ const lua = {
 }
 for (dir in files) {
   templates.innerHTML = templates.innerHTML + "\n<div class='" + dir.toString()+"' id='" + dir.toString() + "'>" + dir.toString()
-  for fl in dir {
+  for (fl in dir) {
     let curr = document.getElementById(dir.toString())
     let reader = new FileReader();
 		reader.addEventListener('load', function(e) {
