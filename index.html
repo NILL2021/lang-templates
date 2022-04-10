@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <script>
-  var templates = document.getElementById("templates")
 const js = {
   "cv":"change-val.js",
   "fn":"function.js",
@@ -32,7 +31,8 @@ const lua = {
 const files = {js, c, cs, python, lua} //Hopefully last error fix? This better work >:(
 
 for (dir in files) {
-  document.getElementById("templates").innerHTML = templates.innerHTML + "\n<div class='" + dir.toString()+"' id='" + dir.toString() + "'>" + dir.toString()
+  let element = document.createElement("<div>");
+  element.innerHTML = templates.innerHTML + "\n<div class='" + dir.toString()+"' id='" + dir.toString() + "'>" + dir.toString()
   for (fl in dir) {
     let curr = document.getElementById(dir.toString())
     let reader = new FileReader();
@@ -81,7 +81,5 @@ border-color: white;
   This uses JavaScript to loop over the files in the repo and write them to the screen. Pretty cool, eh?
   <br>
 </div>
-  <div class="templates" id="templates">
-  </div>
 </body>
 </html>
