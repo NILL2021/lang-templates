@@ -1,7 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script src="main.js"></script>
+  <script>
+  let templates = document.getElementById("templates")
+const js = {
+  "cv":"change-val.js",
+  "fn":"function.js",
+  "hw":"hello-world.js",
+  "obj":"objects.js"
+}
+const c = {
+  "hw":"hello-world.c",
+  "struct":"struct.c",
+}
+const cs = {
+  "hw":"hello-world.cs",
+  "hw6":"net6.x-hw.cs",
+}
+const python = {
+  "cl":"class.py",
+  "fb":"foo-bar.py",
+  "hw":"hello-world.py",
+  "mn":"main.py",
+  "py2c":"py2compatibility.py",
+}
+const lua = {
+  "fb":"foo-bar.lua",
+  "hw":"hello-world.lua",
+  "tbls":"tables.lua",
+}
+const files = {js, c, cs, python, lua} //Hopefully last error fix? This better work >:(
+
+for (dir in files) {
+  templates.innerHTML = templates.innerHTML + "\n<div class='" + dir.toString()+"' id='" + dir.toString() + "'>" + dir.toString()
+  for (fl in dir) {
+    let curr = document.getElementById(dir.toString())
+    let reader = new FileReader();
+		reader.addEventListener('load', function(e) {
+	    		let text = e.target.result;
+	    		document.querySelector("#file-contents").textContent = text;
+		});
+		let res = reader.readAsText("./" + dir.toString() + fl);
+    curr.innerHTML = curr.innerHTML + "\n" + res
+  }
+}
+  </script>
 <title>
 ToastersUnited 
 </title>
