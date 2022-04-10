@@ -1,30 +1,30 @@
 let templates = document.getElementById("templates")
-const files = {js, c, cs, pythin, lua}
+const files = {js, c, cs, python, lua}
 const js = {
-  "change-val.js",
-  "function.js",
-  "hello-world.js",
-  "objects.js"
+  "cv":"change-val.js",
+  "fn":"function.js",
+  "hw":"hello-world.js",
+  "obj":"objects.js"
 }
 const c = {
-  "hello-world.c",
-  "struct.c",
+  "hw":"hello-world.c",
+  "struct":"struct.c",
 }
 const cs = {
-  "hello-world.cs",
-  "net6.x-hw.cs",
+  "hw":"hello-world.cs",
+  "hw6":"net6.x-hw.cs",
 }
 const python = {
-  "class.py",
-  "foo-bar.py",
-  "hello-world.py",
-  "main.py",
-  "py2compatibility.py",
+  "cl":"class.py",
+  "fb":"foo-bar.py",
+  "hw":"hello-world.py",
+  "mn":"main.py",
+  "py2c":"py2compatibility.py",
 }
 const lua = {
-  "foo-bar.lua",
-  "hello-world.lua",
-  "tables.lua",
+  "fb":"foo-bar.lua",
+  "hw":"hello-world.lua",
+  "tbls":"tables.lua",
 }
 for (dir in files) {
   templates.innerHTML = templates.innerHTML + "\n<div class='" + dir.toString()+"' id='" + dir.toString() + "'>" + dir.toString()
