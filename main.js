@@ -1,5 +1,4 @@
 let templates = document.getElementById("templates")
-const files = {js, c, cs, python, lua}
 const js = {
   "cv":"change-val.js",
   "fn":"function.js",
@@ -26,6 +25,8 @@ const lua = {
   "hw":"hello-world.lua",
   "tbls":"tables.lua",
 }
+const files = {js, c, cs, python, lua} //Hopefully last error fix? This better work >:(
+
 for (dir in files) {
   templates.innerHTML = templates.innerHTML + "\n<div class='" + dir.toString()+"' id='" + dir.toString() + "'>" + dir.toString()
   for (fl in dir) {
